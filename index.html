@@ -1,0 +1,110 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PetePad - My Notepad</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="app-container">
+
+        <!-- Sidebar -->
+        
+<aside class="sidebar">
+
+    <h2 class="logo">Pete<span>Pad.</span></h2>
+
+    <input
+        type="text"
+        id="searchNotes"
+        placeholder="Search notes..."
+    >
+
+    <button class="new-note-btn" id="newNoteBtn">
+        + New Note
+    </button>
+
+    <h3>WORKSPACE</h3>
+
+    <div class="sidebar-menu">
+        <button class="nav-item active" data-view="all">
+            <span>📒 All Notes</span>
+            <span id="allCount">0</span>
+        </button>
+
+        <button class="nav-item" data-view="pinned">
+            <span>📌 Pinned</span>
+            <span id="pinnedCount">0</span>
+        </button>
+
+        <button class="nav-item" data-view="archive">
+            <span>📦 Archive</span>
+            <span id="archiveCount">0</span>
+        </button>
+
+        <button class="nav-item" data-view="trash">
+            <span>🗑 Recently Deleted</span>
+            <span id="trashCount">0</span>
+        </button>
+    </div>
+
+    <h3 class="your-notes-heading">YOUR NOTES</h3>
+
+    <div class="notes-list" id="notesList">
+    </div>
+
+</aside>
+
+
+        <!-- Main Editor -->
+        <main class="editor">
+
+            <header class="top-bar">
+                <h2>My Workspace</h2>
+                <button id="themeBtn">🌙</button>
+            </header>
+
+            <section class="note-editor">
+                <input 
+                    type="text" 
+                    id="noteTitle" 
+                    placeholder="Untitled Note"
+                >
+
+                <div class="format-toolbar">
+    <button type="button" data-command="bold"><b>B</b></button>
+    <button type="button" data-command="italic"><i>I</i></button>
+    <button type="button" data-command="underline"><u>U</u></button>
+    <button type="button" data-command="insertUnorderedList">• List</button>
+    <button type="button" data-command="formatBlock" data-value="H2">Heading</button>
+</div>
+
+<div id="noteContent" class="note-content" contenteditable="true"
+     data-placeholder="Start writing your thoughts..."></div>
+
+                
+
+<footer class="editor-footer">
+
+    <div class="note-info">
+        <span id="saveStatus">Ready</span>
+        <span id="wordCount">0 words</span>
+    </div>
+
+   
+
+</footer>
+
+
+            </section>
+
+        </main>
+
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
